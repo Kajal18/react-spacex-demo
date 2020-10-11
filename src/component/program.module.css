@@ -31,3 +31,31 @@
     height: 100px;
     width: 100%;
 }
+
+@media only screen and (min-width : 768px) {
+    .list p {
+        margin-right:20% ;
+        margin-left: 5px;
+        height: 200px;
+    }
+    .list li{
+        float: left;
+        width: 33.33%;
+    }
+  }
+
+  /* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+    .list li{
+        height:100% ;
+    }
+    .list p {
+        margin-right:20% ;
+        margin-left: 5px;
+        height: 200px;
+    }
+    .list li{
+        float: left;
+        width: 33.33%;
+    }
+  }
