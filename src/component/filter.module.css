@@ -1,0 +1,22 @@
+.filter{
+    /* width: 25%; */
+    box-sizing: border-box;
+    border: 1px solid black;
+    height: 100%;
+    margin-top: 50px;
+}
+
+.filter button{
+    border-radius: 5px;
+    background-color: lightblue;
+    margin:auto;
+}
+
+@media only screen and (min-width : 768px) {
+    width: 25%;
+  }
+
+  /* Medium Devices, Desktops */
+  @media only screen and (min-width : 992px) {
+    width: 50%;
+  }

@@ -1,0 +1,21 @@
+.home{
+    /* margin: auto; */
+    display: flex;
+    /* flex-wrap: wrap; */
+}
+
+.section{
+    float: left;
+    /* width: 50%; */
+    /* padding: 10px; */
+}
+
+@media only screen and (min-width : 768px) {
+    width: 15%;
+  }
+
+  /* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+    width: 85%;
+  }
+
