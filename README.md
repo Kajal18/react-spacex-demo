@@ -14,5 +14,5 @@ You will also see any lint errors in the console.
 
 ## Deployed App
 
-Also you can visit the app deployed on heroku with below link
-[https://react-spacex-api-demo.herokuapp.com/]
+Also you can visit the app deployed on heroku with below link <br/>
+https://react-spacex-api-demo.herokuapp.com/
