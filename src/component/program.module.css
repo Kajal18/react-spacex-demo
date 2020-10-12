@@ -1,10 +1,9 @@
 .list { 
     width: 100%;
     box-sizing: border-box;
-    border: 1px solid black;
+    border-radius: 10px;
     margin-right:20% ;
-    height: 100%;
-    margin-top: 50px;
+    margin-top: 37px;
 }
 
 .list li{
@@ -15,47 +14,75 @@
 
 .list p {
     box-sizing: border-box;
-    border: 1px solid black;
+    border-radius: 10px;
     margin-right:20% ;
     margin-left: 5px;
-    height: 200px;
+    height: 400px;
+    background-color: white;
 }
 
 .paginationButton button{
-    background-color: lightblue;
+    margin-left: 5px;
+    height: 30px;
+    width: 60px;
+    /* margin-right: 5px; */
     border-radius: 2px;
     margin-top: 25%;
+    background-color: lightgreen;
 }
 
 .list img{
-    height: 100px;
-    width: 100%;
+    /* margin:5px 5px 5px 2px; */
+    /* height: 200px; */
+    width: 250px;
+    /* border-radius: 5px; */
+    /* border: 0px solid; */
+    /* outline: none; */
+    /* background-color:#f2f2f2 ; */
+}
+
+.list img:alt {
+    /* margin:5px 5px 5px 2px; */
+    height: 200px;
+    width: 250px;
+    border-radius: 5px;
+    /* background-color:#f2f2f2 ; */
 }
 
 @media only screen and (min-width : 768px) {
     .list p {
         margin-right:20% ;
         margin-left: 5px;
-        height: 200px;
+        height: 400px;
     }
     .list li{
         float: left;
         width: 33.33%;
+    }
+    .list img{
+        margin:5px 5px 5px 2px;
+        height: 200px;
+        width: 250px;
     }
   }
 
   /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
-    .list li{
-        height:100% ;
-    }
+    /* .list li{ */
+        /* height:100% ; */
+    /* } */
     .list p {
         margin-right:20% ;
         margin-left: 5px;
-        height: 200px;
+        height: 400px;
     }
     .list li{
         float: left;
         width: 33.33%;
+    }
+    .list img{
+        margin:5px 5px 5px 2px;
+        height: 200px;
+        width: 250px;
     }
   }

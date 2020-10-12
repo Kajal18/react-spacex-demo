@@ -25,13 +25,13 @@ const Home = () => {
     }
     return (
         <div className={classes.home}>
-            <div className={classes.section} style={{ width: '15%', marginRight: '10px', marginLeft: '5px' }}>
+            <div className={classes.div1}>
                 <Filter handleYear={handleYear} handleLanding={handleLanding} handleLaunch={handleLaunch} />
             </div>
-            <div className={classes.section} style={{ width: '85%', marginRight: '5px' }}>
+            <div className={classes.div2}>
                 <ProgramList launch_year={selectedYear} launch_success={successLaunch} />
             </div>
-        </div>
+        </div >
     )
 }
 

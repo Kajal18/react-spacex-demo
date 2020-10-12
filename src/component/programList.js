@@ -38,16 +38,16 @@ const ProgramList = (props) => {
     });
 
     return (
-        <div>
-            <div className={classes.list}>
+        <div className={classes.list}>
+            <div >
                 {currentTodos && currentTodos.map((data, index) => (
                     <li>
-
                         <p>
-                            <img src="https://cnet3.cbsistatic.com/img/8L92RPCyfMkZ4sFej0FUgZJ4xSc=/940x0/2019/11/11/3eea2a76-cda0-4db8-ab42-86ff6b5e1ece/starlink.jpg"></img><br />
-                            <b><i>Mission id:</i></b> {data.mission_name} <br />
-                            <b><i>Launch year:</i></b> {data.launch_year}<br />
-                            Successful launch: {data.launch_success === true ? 1 : 0}<br />
+                            <img src={data.mission_patch}></img><br />
+                            <h4 style={{ fontSize: '16px', whiteSpace: 'nowrap', color: '#494d83' }}> {data.mission_name} {"#"}{index}</h4>
+                            <h4 style={{ fontWeight: '700', color: '#000', fontSize: '13px' }}>Launch year:{data.launch_year} </h4>
+                            <h4 style={{ fontWeight: '700', color: '#000', fontSize: '13px' }}>Successful launch: {data.launch_success === true ? 'Yes' : 'No'} </h4>
+                            <h4 style={{ fontWeight: '700', color: '#000', fontSize: '13px' }}>Successful landing: {data.launch_landing === true ? 'Yes' : 'No'} </h4>
                         </p >
                     </li >
                 ))}

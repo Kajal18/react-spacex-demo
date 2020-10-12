@@ -1,17 +1,26 @@
 .filter{
     /* width: 25%; */
     box-sizing: border-box;
-    border: 1px solid black;
-    height: 100%;
+    /* border: 1px solid black; */
     margin-top: 50px;
+    background-color: white;
+    border-radius: 10px;
 }
 
 .filter button{
     border-radius: 5px;
-    background-color: lightblue;
+    background-color: lightgreen;
     margin:auto;
+    margin-left: 20px;
+    height: 30px;
+    width: 60px;
+    margin-right: 40px;
+    margin-bottom: 10px;
 }
 
+.filter button:active{
+  background-color: green;
+}
 @media only screen and (min-width : 768px) {
     width: 25%;
   }

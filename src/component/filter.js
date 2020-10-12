@@ -21,7 +21,7 @@ const launchYear = [
 const Filter = (props) => {
     return (
         <div className={classes.filter}>
-            Filters
+            <div><p>Filters</p></div>
             <p>Launch Years</p>
             <hr></hr>
             {launchYear && launchYear.map((data, index) => (

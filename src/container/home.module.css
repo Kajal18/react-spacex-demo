@@ -1,7 +1,21 @@
 .home{
     /* margin: auto; */
     display: flex;
+    background-color: #dcdcdc;
     /* flex-wrap: wrap; */
+}
+
+.div1{
+  width: 20%;
+  margin-right: 10px;
+  float: left;
+  margin-left: 5px
+}
+
+.div2{
+  width: 80%;
+  float: left;
+  margin-right: 5px;
 }
 
 .section{
@@ -11,11 +25,21 @@
 }
 
 @media only screen and (min-width : 768px) {
-    width: 15%;
+  .div1{
+    width: 20%;
   }
+  .div2{
+    width: 80%;
+  }
+}
 
   /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
-    width: 85%;
+  .div1{
+    width: 20%;
+  }
+  .div2{
+    width: 80%;
+  }
   }
 
