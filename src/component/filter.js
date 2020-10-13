@@ -21,7 +21,7 @@ const launchYear = [
 const Filter = (props) => {
     return (
         <div className={classes.filter}>
-            <div><p>Filters</p></div>
+            <div style={{ textAlign: 'left', fontSize: '21px', margin: '12px 0 0 15px' }}><b>Filters</b></div>
             <p>Launch Years</p>
             <hr></hr>
             {launchYear && launchYear.map((data, index) => (

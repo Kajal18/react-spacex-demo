@@ -6,9 +6,8 @@ const ProgramList = (props) => {
     const [currentPage, setCurrentPage] = useState(1)
     const dataPerPage = 9
     const launch_year = `launch_year=${props.launch_year}`
-    const launch_success = `launch_success =${props.launch_success}`
+    const launch_success = `launch_success=${props.launch_success}`
     useEffect(() => {
-        console.log(`https://api.spacexdata.com/v3/launches?limit=100&${launch_year}&${launch_success}`)
         fetch(`https://api.spacexdata.com/v3/launches?limit=100&${launch_year}&${launch_success}`, { mode: 'cors' }).then(response => response.json()).then(data => {
             setApiData(data)
         })
@@ -43,11 +42,11 @@ const ProgramList = (props) => {
                 {currentTodos && currentTodos.map((data, index) => (
                     <li>
                         <p>
-                            <img src={data.mission_patch}></img><br />
+                            <div className={classes.imageClass}><img src={data.mission_patch} alt={data.mission_name}></img></div><br />
                             <h4 style={{ fontSize: '16px', whiteSpace: 'nowrap', color: '#494d83' }}> {data.mission_name} {"#"}{index}</h4>
                             <h4 style={{ fontWeight: '700', color: '#000', fontSize: '13px' }}>Launch year:{data.launch_year} </h4>
-                            <h4 style={{ fontWeight: '700', color: '#000', fontSize: '13px' }}>Successful launch: {data.launch_success === true ? 'Yes' : 'No'} </h4>
-                            <h4 style={{ fontWeight: '700', color: '#000', fontSize: '13px' }}>Successful landing: {data.launch_landing === true ? 'Yes' : 'No'} </h4>
+                            <h4 style={{ fontWeight: '700', color: '#000', fontSize: '13px' }}>Successful launch: {data.launch_success === true ? 'true' : 'false'} </h4>
+                            <h4 style={{ fontWeight: '700', color: '#000', fontSize: '13px' }}>Successful landing: {data.launch_landing || 'null'} </h4>
                         </p >
                     </li >
                 ))}
