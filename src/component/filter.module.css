@@ -7,9 +7,9 @@
     border-radius: 10px;
 }
 
-.filter button{
+.activeButton{
     border-radius: 5px;
-    background-color: lightgreen;
+    background-color: green;
     margin:auto;
     margin-left: 20px;
     height: 30px;
@@ -18,9 +18,20 @@
     margin-bottom: 10px;
 }
 
+.noActiveButton{
+  border-radius: 5px;
+  background-color: lightgreen;
+  margin:auto;
+  margin-left: 20px;
+  height: 30px;
+  width: 60px;
+  margin-right: 40px;
+  margin-bottom: 10px;
+}
+/* 
 .filter button:active{
   background-color: green;
-}
+} */
 @media only screen and (min-width : 768px) {
     width: 25%;
   }

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import noDataFound from './noDataFound';
 import classes from './program.module.css'
 
 const ProgramList = (props) => {
@@ -8,8 +9,15 @@ const ProgramList = (props) => {
     const launch_year = `launch_year=${props.launch_year}`
     const launch_success = `launch_success=${props.launch_success}`
     useEffect(() => {
+        console.log(`https://api.spacexdata.com/v3/launches?limit=100&${launch_year}&${launch_success}`)
         fetch(`https://api.spacexdata.com/v3/launches?limit=100&${launch_year}&${launch_success}`, { mode: 'cors' }).then(response => response.json()).then(data => {
-            setApiData(data)
+            if (data.length) {
+                setApiData(data)
+            } else {
+                return (
+                    <noDataFound></noDataFound>
+                )
+            }
         })
     }, [launch_year, launch_success])
 
@@ -38,26 +46,27 @@ const ProgramList = (props) => {
 
     return (
         <div className={classes.list}>
-            <div >
-                {currentTodos && currentTodos.map((data, index) => (
-                    <li>
-                        <p>
-                            <div className={classes.imageClass}><img src={data.mission_patch} alt={data.mission_name}></img></div><br />
-                            <h4 style={{ fontSize: '16px', whiteSpace: 'nowrap', color: '#494d83' }}> {data.mission_name} {"#"}{index}</h4>
-                            <h4 style={{ fontWeight: '700', color: '#000', fontSize: '13px' }}>Launch year:{data.launch_year} </h4>
-                            <h4 style={{ fontWeight: '700', color: '#000', fontSize: '13px' }}>Successful launch: {data.launch_success === true ? 'true' : 'false'} </h4>
-                            <h4 style={{ fontWeight: '700', color: '#000', fontSize: '13px' }}>Successful landing: {data.launch_landing || 'null'} </h4>
-                        </p >
-                    </li >
-                ))}
+            {apiData && apiData.map((data, index) => (
+                <div className={classes.dataList}>
+                    <p>
+                        <h3 style={{ marginBottom: '0px' }}>{data.mission_name}{"#"}{index}</h3> <br></br>
+                        <h4>Mission Ids:</h4>
+                        {data.mission_id.length ? data.mission_id.map((val, index) => (
+                            <li key={index}>{val}<br /></li>
+                        )) : <li>{'undefined'}<br /></li>}
+                        <h4>Year: {data.launch_year}</h4>
+                        <h4>Launch: {data.launch_success === true ? 'true' : 'false'}</h4>
+                        <h4>Landing: {data.launch_landing || 'null'}</h4>
+                    </p >
+                </div>
+            ))}
 
-            </div >
-            <div>
-                <ul className={classes.paginationButton} >
+            {/* <div>
+                <ul className={classes.paginationButton} >  
                     {renderPageNumbers}
                 </ul>
-            </div>
-        </div>
+            </div> */}
+        </div >
     )
 }
 

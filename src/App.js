@@ -1,12 +1,18 @@
 import React from 'react';
 import './App.css';
 import Home from './container/home';
+import { BrowserRouter } from 'react-router-dom';
+import { Route } from 'react-router'
 
 function App() {
   return (
-    <div className="App">
-      <Home></Home>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Route path='/:options'>
+          <Home></Home>
+        </Route>
+      </div>
+    </BrowserRouter>
   );
 }
 

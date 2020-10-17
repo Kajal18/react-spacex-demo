@@ -19,26 +19,41 @@ const launchYear = [
 ]
 
 const Filter = (props) => {
+    console.log(props.activeButton)
     return (
         <div className={classes.filter}>
             <div style={{ textAlign: 'left', fontSize: '21px', margin: '12px 0 0 15px' }}><b>Filters</b></div>
             <p>Launch Years</p>
             <hr></hr>
             {launchYear && launchYear.map((data, index) => (
-                <button key={index} value={data} onClick={props.handleYear}>{data}</button>
+                <button key={index}
+                    className={props.activeButton == data ? classes.activeButton : classes.noActiveButton}
+                    value={data}
+                    onClick={props.handleYear}>{data}</button>
             ))}
             <br />
             <br />
             Successful Launch
             <hr></hr>
-            <button onClick={props.handleLaunch} value='true'>True</button>
-            <button onClick={props.handleLaunch} value='false'>False</button>
+            <button
+                onClick={props.handleLaunch}
+                value='true'
+                className={props.activeButton == 'true' ? classes.activeButton : classes.noActiveButton}
+            >True</button>
+            <button
+                onClick={props.handleLaunch}
+                className={props.activeButton == 'false' ? classes.activeButton : classes.noActiveButton}
+                value='false'>False</button>
             <br />
             <br />
-            Successful Landing
+            {/* Successful Landing
             <hr></hr>
-            <button onClick={props.handleLanding} value='true'>True</button>
-            <button onClick={props.handleLanding} value='false'>False</button>
+            <button onClick={props.handleLanding}
+                className={props.activeButton == 'true' ? classes.activeButton : classes.noActiveButton}
+                value='true'>True</button>
+            <button onClick={props.handleLanding}
+                className={props.activeButton == 'false' ? classes.activeButton : classes.noActiveButton}
+                value='false'>False</button> */}
         </div>
     )
 }
