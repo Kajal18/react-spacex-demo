@@ -39,6 +39,7 @@ const Home = () => {
     return (
         <div className={classes.home}>
             <div className={classes.div1}>
+                {/* <p>SpacEx Launch</p> */}
                 <Filter handleYear={handleYear} activeButton={activeButton} handleLanding={handleLanding} handleLaunch={handleLaunch} />
             </div>
             <div className={classes.div2}>

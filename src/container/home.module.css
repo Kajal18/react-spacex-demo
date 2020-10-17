@@ -4,7 +4,6 @@
     background-color: #dcdcdc;
     /* flex-wrap: wrap; */
 }
-
 .div1{
   width: 20%;
   margin-right: 10px;
@@ -12,6 +11,13 @@
   margin-left: 5px
 }
 
+.div1 p{
+  /* margin: 0px 0px 0px 15px; */
+  font-size: 30px;
+  word-spacing: -2px;
+  /* height: 10%; */
+  /* width: 100%; */
+}
 .div2{
   width: 80%;
   float: left;

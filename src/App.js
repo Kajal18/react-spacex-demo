@@ -8,7 +8,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Route path='/:options'>
+        <Route path='/'>
           <Home></Home>
         </Route>
       </div>
